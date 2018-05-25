@@ -33,6 +33,39 @@ class App extends Component {
               Home
             </Button>
             {
+              isAuthenticated() && (
+                <Button
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.goTo.bind(this, 'upload')}
+                >
+                Upload
+                </Button>
+              )
+            }
+            {
+              isAuthenticated() && (
+                <Button
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.goTo.bind(this, 'scheduler')}
+                >
+                Scheduler
+                </Button>
+              )
+            }
+            {
+              isAuthenticated() && (
+                <Button
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={this.goTo.bind(this, 'Screen')}
+                >
+                Screen
+                </Button>
+              )
+            }
+            {
               !isAuthenticated() && (
                   <Button
                     id="qsLoginBtn"
