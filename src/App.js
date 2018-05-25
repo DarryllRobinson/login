@@ -20,10 +20,12 @@ class App extends Component {
 
     return (
       <div>
+      {
+        isAuthenticated() && (
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">Auth0 - React</a>
+              <a href="#">Flying Crow Media Content Management System</a>
             </Navbar.Brand>
             <Button
               bsStyle="primary"
@@ -32,17 +34,6 @@ class App extends Component {
             >
               Home
             </Button>
-            {
-              isAuthenticated() && (
-                <Button
-                  bsStyle="primary"
-                  className="btn-margin"
-                  onClick={this.goTo.bind(this, 'upload')}
-                >
-                Upload
-                </Button>
-              )
-            }
             {
               isAuthenticated() && (
                 <Button
@@ -91,6 +82,7 @@ class App extends Component {
             }
           </Navbar.Header>
         </Navbar>
+      )}
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Router } from 'react-router-dom';
-import Upload from './components/Upload/Upload';
 import Scheduler from './components/Scheduler/Scheduler';
 import Screen from './components/Screen/Screen';
 import App from './App';
@@ -24,7 +23,6 @@ export const makeMainRoutes = () => {
           <Route path="/" render={(props) => <App auth={auth} {...props} />} />
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/scheduler" render={(props) => <Scheduler auth={auth} {...props} />} />
-          <Route path="/upload" render={(props) => <Upload auth={auth} {...props} />} />
           <Route path="/screen" render={(props) => <Screen auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);

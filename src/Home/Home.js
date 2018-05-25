@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import logo from './logo - faded.png';
+import './Home.css';
 
 class Home extends Component {
   login() {
@@ -11,22 +13,25 @@ class Home extends Component {
         {
           isAuthenticated() && (
               <h4>
-                You are logged in!
+                Welcome to the Flying Crow Media CMS
               </h4>
             )
         }
         {
           !isAuthenticated() && (
-              <h4>
-                You are not logged in! Please{' '}
+            <div className="loggedOut">
+            <img src={ logo } alt="fcm logo" />
+              <h5>
+                Please{' '}
                 <a
                   style={{ cursor: 'pointer' }}
                   onClick={this.login.bind(this)}
                 >
-                  Log In
+                  sign in
                 </a>
-                {' '}to continue.
-              </h4>
+                {' '}to start your session.
+              </h5>
+              </div>
             )
         }
       </div>

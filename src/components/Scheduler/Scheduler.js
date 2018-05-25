@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import Nav from '../Nav';
-import Upload from '../Upload/Upload';
+//import Upload from '../Upload/Upload';
 import {Industry} from './Industry';
 import { Category } from './Category';
 import DatePicker from 'react-datepicker';
@@ -28,7 +28,7 @@ class Scheduler extends Component {
   }
 
   handleChange(e) {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({[e.target.name]: e.target.value});
     console.log('logging: ',
     [
       this.state.auto.toString(),
@@ -49,18 +49,14 @@ class Scheduler extends Component {
     this.setState({ endDate: date })
   }
 
-  prepareTags() {
-
-  }
-
   uploadWidget = () => {
     let myTags = [
-      /*this.state.auto.toString(),
+      this.state.auto.toString(),
       this.state.name.toString(),
       this.state.startDate.format(),
       this.state.endDate.format(),
       this.state.industry.toString(),
-      this.state.category.toString(),*/
+      this.state.category.toString(),
       'TBM'
     ];
 
@@ -82,7 +78,7 @@ class Scheduler extends Component {
         {/*<Nav />*/}
         <h3 className="text-center">Scheduler</h3>
         <hr/>
-        <form onChange={this.handleChange}>
+        <div name="campaign" onChange={this.handleChange}>
           <h3>Campaign Details</h3>
 
           <p>
@@ -135,7 +131,7 @@ class Scheduler extends Component {
              <div className="jumbotron text-center">{/*<input placeholder="Content Tag" onChange={this.handleTagChange}></input>*/}
                <button onClick={this.uploadWidget} className="btn btn-lg btn-info">Upload Content</button>
              </div>
-        </form>
+        </div>
 
       </div>
     );
