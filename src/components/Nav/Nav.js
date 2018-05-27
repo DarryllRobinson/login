@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
-import Home from './Home/Home';
-import './App.css';
+import './Nav.css';
 
-class App extends Component {
-  goTo(route) {
+class Nav extends Component {
+  /*goTo(route) {
     this.props.history.replace(`/${route}`)
   }
 
@@ -14,14 +13,13 @@ class App extends Component {
 
   logout() {
     this.props.auth.logout();
-  }
+  }*/
 
   render() {
     const { isAuthenticated } = this.props.auth;
 
     return (
       <div>
-      {console.log('App: ', isAuthenticated())}
       {
         isAuthenticated() && (
         <Navbar fluid>
@@ -80,7 +78,7 @@ class App extends Component {
                   >
                     Log Out
                   </Button>
-              )
+                )
             }
           </Navbar.Header>
         </Navbar>
@@ -90,4 +88,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Nav;

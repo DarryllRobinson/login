@@ -23,40 +23,20 @@ class Screen extends Component {
     console.log('tag before: ', this.state.tag);
     // updating [tags] in state to send with upload request
     this.setState({ tag: event.target.value });
-    /*this.setState(state => {
-      state.tag = event.target.value;
-      return state;
-    });*/
     console.log('tag after: ', this.state.tag);
   };
 
   componentDidMount() {
-    /*const cld = cloudinary.Cloudinary.new({ cloud_name: 'flycrow' });
-    let list = cld.v2.api.resources_by_tag("fcm", function(error, result){console.log(result); });
-    console.log('cld: ', cld);*/
-
     var cloudinary1 = require('cloudinary').v2;
-    //console.log('cloudinary1: ', cloudinary1.api.resources_by_tag('fcm'));
     console.log('cloudinary1: ', cloudinary1);
-/*
-    var r;
-    var listAllResources = allCursors(cloudinary.api.resources, (result)=> result.resources);
-
-    listAllResources((resources)=> {console.log("got " + resources.length + " resources");r = resources;});
-
-    //this.getVideos();
-    // this.getIPstack(); // For when we want the device location info
-    //this.getPlaylist();*/
+    this.getIPstack();
   }
 
   getPlaylist() {
+    const cld = cloudinary.Cloudinary.new( {
+      cloud_name: 'flycrow'
+    });
 
-    /*let cloudinary = require('cloudinary');
-    let list = cloudinary.v2.api.resources_by_tag("fcm", function(error, result){console.log(result); });*/
-
-    const cld = cloudinary.Cloudinary.new({ cloud_name: 'flycrow' });
-    //let list = cld.v2.api.resources_by_tag("fcm", function(error, result){console.log(result); });
-    //console.log('list: ', list);
     const player = cld.videoPlayer('example-player', {
       playedEventTimes: [1]
     });

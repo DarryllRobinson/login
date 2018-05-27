@@ -4,6 +4,7 @@ import Scheduler from './components/Scheduler/Scheduler';
 import Screen from './components/Screen/Screen';
 import App from './App';
 import Home from './Home/Home';
+import Signup from './components/Signup/Signup';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
@@ -24,6 +25,7 @@ export const makeMainRoutes = () => {
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/scheduler" render={(props) => <Scheduler auth={auth} {...props} />} />
           <Route path="/screen" render={(props) => <Screen auth={auth} {...props} />} />
+          <Route path="/signup" render={(props) => <Signup auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} />

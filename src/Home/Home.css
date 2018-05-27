@@ -1,13 +1,19 @@
-div.container {
-    width: auto;
-    height: auto;
-
-    display:flex;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    margin: auto;
+.loggedOut {
+  /*background: purple;*/
+  text-align: center;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+div {
+  /*background-color: green;
+  margin-top: 50px;*/
+}
+/*
+div.container {
+    background-color: red;
+}
+
+h5 {
+  background-color: yellow;
+}
+*/

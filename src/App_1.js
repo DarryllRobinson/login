@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
-import Home from './Home/Home';
 import './App.css';
 
 class App extends Component {
@@ -21,7 +20,6 @@ class App extends Component {
 
     return (
       <div>
-      {console.log('App: ', isAuthenticated())}
       {
         isAuthenticated() && (
         <Navbar fluid>
@@ -80,7 +78,7 @@ class App extends Component {
                   >
                     Log Out
                   </Button>
-              )
+                )
             }
           </Navbar.Header>
         </Navbar>

@@ -10,6 +10,7 @@ class Home extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="container">
+      {console.log('calling Home: ', isAuthenticated())}
         {
           isAuthenticated() && (
               <h4>
