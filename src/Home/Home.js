@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo - faded.png';
+//import Login from './Login';
 import './Home.css';
 
 class Home extends Component {
@@ -10,7 +11,6 @@ class Home extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="container">
-      {console.log('calling Home: ', isAuthenticated())}
         {
           isAuthenticated() && (
               <h4>

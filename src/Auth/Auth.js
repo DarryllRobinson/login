@@ -19,6 +19,24 @@ export default class Auth {
     this.isAuthenticated = this.isAuthenticated.bind(this);
   }
 
+/*
+  login(e) {
+    alert('login');
+    e.preventDefault();
+    console.log('document.getElementById(email).value: ', document.getElementById('email').value);
+    let username = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    auth0.login( {
+      realm: databaseConnection,
+      username: username,
+      password: password
+    }, function(err) {
+      console.log('err: ', err);
+      //if (err) displayError(err);
+    });
+  }
+  */
+
   login() {
     this.auth0.authorize();
   }
@@ -27,9 +45,9 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/home');
+        history.replace('/');
       } else if (err) {
-        history.replace('/home');
+        history.replace('/');
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -42,8 +60,8 @@ export default class Auth {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
-    // navigate to the home route
-    history.replace('/home');
+    // navigate to the app route instead of home, we call that instead
+    history.replace('/');
   }
 
   logout() {
@@ -51,12 +69,12 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    // navigate to the home route
-    history.replace('/home');
+    // navigate to the app route instead of home, we call that instead
+    history.replace('/');
   }
 
   isAuthenticated() {
-    // Check whether the current time is past the 
+    // Check whether the current time is past the
     // access token's expiry time
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;

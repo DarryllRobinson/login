@@ -21,7 +21,6 @@ class App extends Component {
 
     return (
       <div>
-      {console.log('App: ', isAuthenticated())}
       {
         isAuthenticated() && (
         <Navbar fluid>
@@ -59,18 +58,6 @@ class App extends Component {
               )
             }
             {
-              !isAuthenticated() && (
-                  <Button
-                    id="qsLoginBtn"
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
-                  </Button>
-                )
-            }
-            {
               isAuthenticated() && (
                   <Button
                     id="qsLogoutBtn"
@@ -82,9 +69,28 @@ class App extends Component {
                   </Button>
               )
             }
+            {
+              !isAuthenticated() && (
+                  <Button
+                    id="qsLoginBtn"
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In
+                  </Button>
+                )
+            }
           </Navbar.Header>
         </Navbar>
       )}
+      {
+        !isAuthenticated() && (
+          <div>
+            <Home {...this.props} />
+          </div>
+        )
+      }
       </div>
     );
   }
