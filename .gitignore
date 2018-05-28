@@ -3,6 +3,8 @@
 # dependencies
 /node_modules/*
 !/node_modules/cloudinary-video-player
+!/node_modules/cloudinary-core
+!/node_modules/cloudinary
 
 # testing
 coverage
