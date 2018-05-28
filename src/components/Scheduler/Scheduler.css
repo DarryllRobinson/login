@@ -1,7 +1,19 @@
-.campaign {
+/*.campaign {
   margin: 50px;
   border: 2px solid grey;
   padding: 50px;
+  position: absolute;
+}*/
+
+.campaign {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 60vh;
+  margin: 50px;
+  /*border: 2px solid grey;*/
 }
 
 h3 {
@@ -13,5 +25,7 @@ table {
 }
 
 td {
-  border: 1px solid green;
+  /*border: 1px solid red;*/
+  text-align: left;
+  padding: 10px;
 }

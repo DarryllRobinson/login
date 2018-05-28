@@ -3,12 +3,11 @@
   "homepage": "https://www.stillproud.com",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "react-scripts": "^0.9.5"
-  },
+  "devDependencies": {},
   "dependencies": {
     "auth0-js": "^9.0.0",
     "axios": "^0.18.0",
+    "babel-loader": "^7.1.4",
     "bootstrap": "^4.1.1",
     "cloudinary": "^1.11.0",
     "cloudinary-core": "^2.5.0",
@@ -20,6 +19,7 @@
     "react-dom": "^16.4.0",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
+    "react-scripts": "^1.1.4",
     "react-transition-group": "^2.3.1"
   },
   "scripts": {

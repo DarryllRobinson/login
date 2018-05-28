@@ -83,19 +83,18 @@ class Scheduler extends Component {
 
     return (
       <div>
-        {/*<Nav />*/}
         <h3 className="text-center">Scheduler</h3>
         <hr/>
         <div className="campaign" onChange={this.handleChange}>
           <table>
             <tr>
-              <td>
+              <td colspan="2">
                 <h3>Campaign Details</h3>
               </td>
             </tr>
 
             <tr>
-              <td>
+              <td colspan="2">
                 <input type="text" name="name" id="name" placeholder="Campaign Name" />
               </td>
             </tr>
@@ -126,40 +125,45 @@ class Scheduler extends Component {
                 </td>
               </tr>
 
+              <tr>
+                <td>
+                  Start Date and Time
+                  <DatePicker
+                    dateFormat="YYYY/MM/DD HH:mm"
+                    name="startDate"
+                    todayButton={"Today"}
+                    selected={this.state.startDate}
+                    onChange={this.handleChangeStart}
+                    showTimeSelect
+                    timeCaption="Time"
+                    timeFormat="HH:mm"
+                    peekNextMonth
+                    showMonthDropdown
+                    showYearDropdown
+                    showWeekNumbers
+                    selectsStart
+                  />
+              </td>
 
-          Start Date and Time
-          <DatePicker
-            dateFormat="YYYY/MM/DD HH:mm"
-            name="startDate"
-            todayButton={"Today"}
-            selected={this.state.startDate}
-            onChange={this.handleChangeStart}
-            showTimeSelect
-            timeCaption="Time"
-            timeFormat="HH:mm"
-            peekNextMonth
-            showMonthDropdown
-            showYearDropdown
-            showWeekNumbers
-            selectsStart
-          />
-
-          End Date and Time
-          <DatePicker
-            dateFormat="YYYY/MM/DD HH:mm"
-            name="endDate"
-            todayButton={"Today"}
-            selected={this.state.endDate}
-            onChange={this.handleChangeEnd}
-            showTimeSelect
-            timeCaption="Time"
-            timeFormat="HH:mm"
-            peekNextMonth
-            showMonthDropdown
-            showYearDropdown
-            showWeekNumbers
-            selectsEnd
-          />
+              <td>
+                End Date and Time
+                <DatePicker
+                  dateFormat="YYYY/MM/DD HH:mm"
+                  name="endDate"
+                  todayButton={"Today"}
+                  selected={this.state.endDate}
+                  onChange={this.handleChangeEnd}
+                  showTimeSelect
+                  timeCaption="Time"
+                  timeFormat="HH:mm"
+                  peekNextMonth
+                  showMonthDropdown
+                  showYearDropdown
+                  showWeekNumbers
+                  selectsEnd
+                />
+              </td>
+            </tr>
         </table>
 
              <div className="jumbotron text-center">{/*<input placeholder="Content Tag" onChange={this.handleTagChange}></input>*/}
