@@ -5,6 +5,7 @@
 !/node_modules/cloudinary-video-player
 !/node_modules/cloudinary-core
 !/node_modules/cloudinary
+!/node_modules/popper
 
 # testing
 coverage
