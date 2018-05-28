@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo - faded.png';
+import Main from '../components/Main/Main';
 //import Login from './Login';
 import './Home.css';
 
@@ -11,13 +12,6 @@ class Home extends Component {
     const { isAuthenticated } = this.props.auth;
     return (
       <div className="container">
-        {
-          isAuthenticated() && (
-              <h4>
-                Welcome to the Flying Crow Media CMS
-              </h4>
-            )
-        }
         {
           !isAuthenticated() && (
             <div className="loggedOut">
@@ -34,6 +28,11 @@ class Home extends Component {
               </h5>
               </div>
             )
+        }
+        {
+          isAuthenticated() && (
+            <Main  />
+          )
         }
       </div>
     );

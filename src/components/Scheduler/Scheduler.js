@@ -7,6 +7,7 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
 import './react-datepicker.css';
+import './Scheduler.css';
 
 class Scheduler extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Scheduler extends Component {
     this.state = {
       auto: false,
       name: '',
+      number: 0,
       startDate: moment(),
       endDate: moment(),
       industry: '',
@@ -27,12 +29,17 @@ class Scheduler extends Component {
     this.uploadWidget = this.uploadWidget.bind(this);
   }
 
+  handleClick() {
+
+  }
+
   handleChange(e) {
     this.setState({[e.target.name]: e.target.value});
     console.log('logging: ',
     [
       this.state.auto.toString(),
       this.state.name.toString(),
+      this.state.number.toString(),
       this.state.startDate.format(),
       this.state.endDate.format(),
       this.state.industry.toString(),
@@ -53,6 +60,7 @@ class Scheduler extends Component {
     let myTags = [
       this.state.auto.toString(),
       this.state.name.toString(),
+      this.state.number.toString(),
       this.state.startDate.format(),
       this.state.endDate.format(),
       this.state.industry.toString(),
@@ -78,21 +86,46 @@ class Scheduler extends Component {
         {/*<Nav />*/}
         <h3 className="text-center">Scheduler</h3>
         <hr/>
-        <div name="campaign" onChange={this.handleChange}>
-          <h3>Campaign Details</h3>
+        <div className="campaign" onChange={this.handleChange}>
+          <table>
+            <tr>
+              <td>
+                <h3>Campaign Details</h3>
+              </td>
+            </tr>
 
-          <p>
-          <input type="text" name="name" placeholder="Campaign Name" />
-          Auto Schedule <input type="checkbox" name="auto" />
-          <Industry
-            name="industry"
-            value={this.state.industry}
-            onChange={this.handleChange} />
-          <Category
-              name="category"
-              value={this.state.category}
-              onChange={this.handleChange} />
-          </p>
+            <tr>
+              <td>
+                <input type="text" name="name" id="name" placeholder="Campaign Name" />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Auto Schedule <input type="checkbox" name="auto" />
+              </td>
+
+              <td>
+                Number of flightings <input type="number" placeholder="0" />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <Industry
+                  name="industry"
+                  value={this.state.industry}
+                  onChange={this.handleChange} />
+              </td>
+
+              <td>
+                <Category
+                  name="category"
+                  value={this.state.category}
+                  onChange={this.handleChange} />
+                </td>
+              </tr>
+
 
           Start Date and Time
           <DatePicker
@@ -127,6 +160,7 @@ class Scheduler extends Component {
             showWeekNumbers
             selectsEnd
           />
+        </table>
 
              <div className="jumbotron text-center">{/*<input placeholder="Content Tag" onChange={this.handleTagChange}></input>*/}
                <button onClick={this.uploadWidget} className="btn btn-lg btn-info">Upload Content</button>

@@ -3,7 +3,7 @@ import { Navbar, Button } from 'react-bootstrap';
 import './Nav.css';
 
 class Nav extends Component {
-  /*goTo(route) {
+  goTo(route) {
     this.props.history.replace(`/${route}`)
   }
 
@@ -13,13 +13,14 @@ class Nav extends Component {
 
   logout() {
     this.props.auth.logout();
-  }*/
+  }
 
   render() {
     const { isAuthenticated } = this.props.auth;
 
     return (
       <div>
+      {console.log('isAuthenticated: ', isAuthenticated())};
       {
         isAuthenticated() && (
         <Navbar fluid>
