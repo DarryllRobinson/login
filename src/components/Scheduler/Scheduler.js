@@ -98,56 +98,29 @@ class Scheduler extends Component {
         <h3 className="text-center">Scheduler</h3>
         <hr/>
         <div className="campaign" onChange={this.handleChange}>
-          <table>
-          <thead>
-            <tr>
-              <td colSpan="2">
                 <h3>Campaign Details</h3>
-              </td>
-            </tr>
-            </thead>
-            <tbody>
-
-            <tr>
-              <td colSpan="2">
                 <input type="text" name="name" id="name" placeholder="Campaign Name" />
-              </td>
-            </tr>
 
-            <tr>
-              <td>
                 Auto Schedule
                 <input type="checkbox"
                 name="auto" />
-              </td>
 
-              <td width="25px" >
                 Number of flightings
                 <input type="number"
                   name="flightings"
                   placeholder="0"
                   onChange={this.handleChange}/>
-              </td>
-            </tr>
 
-            <tr>
-              <td>
                 <Industry
                   name="industry"
                   value={this.state.industry}
                   onChange={this.handleChange} />
-              </td>
 
-              <td>
                 <Category
                   name="category"
                   value={this.state.category}
                   onChange={this.handleChange} />
-                </td>
-              </tr>
 
-              <tr>
-                <td>
                   Start Date and Time
                   <DatePicker
                     dateFormat="YYYY/MM/DD HH:mm"
@@ -164,9 +137,7 @@ class Scheduler extends Component {
                     showWeekNumbers
                     selectsStart
                   />
-              </td>
 
-              <td>
                 End Date and Time
                 <DatePicker
                   dateFormat="YYYY/MM/DD HH:mm"
@@ -183,10 +154,6 @@ class Scheduler extends Component {
                   showWeekNumbers
                   selectsEnd
                 />
-              </td>
-            </tr>
-            </tbody>
-        </table>
 
              <div className="jumbotron text-center">{/*<input placeholder="Content Tag" onChange={this.handleTagChange}></input>*/}
                <button onClick={this.uploadWidget} className="btn btn-lg btn-info">Upload Content</button>

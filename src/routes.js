@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Router } from 'react-router-dom';
 import Scheduler from './components/Scheduler/Scheduler';
 import Success from './components/Success/Success';
-import Navtest from './components/Menu/Navtest';
+//import Navtest from './components/Menu/Navtest';
 import Fail from './components/Fail/Fail';
 import Screen from './components/Screen/Screen';
 import App from './App';
@@ -28,7 +28,7 @@ export const makeMainRoutes = () => {
           <Route path="/home" render={(props) => <Home auth={auth} {...props} />} />
           <Route path="/scheduler" render={(props) => <Scheduler auth={auth} {...props} />} />
           <Route path="/success" render={(props) => <Success auth={auth} {...props} />} />
-          <Route path="/navtest" render={(props) => <Navtest auth={auth} {...props} />} />
+          {/*<Route path="/navtest" render={(props) => <Navtest auth={auth} {...props} />} />*/}
           <Route path="/fail" render={(props) => <Fail auth={auth} {...props} />} />
           <Route path="/screen" render={(props) => <Screen auth={auth} {...props} />} />
           <Route path="/signup" render={(props) => <Signup auth={auth} {...props} />} />

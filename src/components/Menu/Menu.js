@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, Button, NavItem} from 'react-bootstrap';
+//import { Nav, Navbar, Button, NavItem} from 'react-bootstrap';
 import "../../../node_modules/jquery/dist/jquery.min.js";
 import "../../../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import './Menu.css';
@@ -34,30 +34,18 @@ class Menu extends Component {
             <div  className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul  className="navbar-nav mr-auto">
                 <li  className="nav-item active">
-                  <a  className="nav-link" href="#">Home <span  className="sr-only">(current)</span></a>
+                  <a  className="nav-link" href="home">Home <span  className="sr-only"></span></a>
                 </li>
-                <li  className="nav-item">
-                  <a  className="nav-link" href="#">Link</a>
+                <li  className="nav-item active">
+                  <a  className="nav-link" href="scheduler">Schedule <span  className="sr-only"></span></a>
                 </li>
-                <li  className="nav-item dropdown">
-                  <a  className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <div  className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a  className="dropdown-item" href="#">Action</a>
-                    <a  className="dropdown-item" href="#">Another action</a>
-                    <div  className="dropdown-divider"></div>
-                    <a  className="dropdown-item" href="#">Something else here</a>
-                  </div>
+                <li  className="nav-item active">
+                  <a  className="nav-link" href="screen">Screen <span  className="sr-only"></span></a>
                 </li>
-                <li  className="nav-item">
-                  <a  className="nav-link disabled" href="#">Disabled</a>
+                <li  className="nav-item active">
+                  <a  className="nav-link" onClick={this.logout.bind(this)}>Log Out <span  className="sr-only"></span></a>
                 </li>
               </ul>
-              <form  className="form-inline my-2 my-lg-0">
-                <input  className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button  className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
             </div>
           </nav>
       )}

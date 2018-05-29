@@ -27,8 +27,8 @@ class Screen extends Component {
   };
 
   componentDidMount() {
-    var cloudinary1 = require('cloudinary').v2;
-    console.log('cloudinary1: ', cloudinary1);
+    //var cloudinary1 = require('cloudinary').v2;
+    //console.log('cloudinary1: ', cloudinary1);
     this.getIPstack();
   }
 
