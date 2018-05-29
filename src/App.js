@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import { Navbar, Button } from 'react-bootstrap';
 import Home from './Home/Home';
 //import Main from './components/Main/Main';
-import Nav from './components/Nav/Nav';
+import Menu from './components/Menu/Menu';
 import './App.css';
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
 
     return (
       <div>
-        <Nav {...this.props} />
+        <Menu {...this.props} />
         {
           !isAuthenticated() && (
             <div>
