@@ -19,6 +19,11 @@ class Upload extends Component {
     console.log('tag after: ', this.state.tag);
   };*/
 
+  goTo(route) {
+    alert('Routing');
+    this.props.history.push(`/${route}`)
+  }
+
   uploadWidget = () => {
     window.cloudinary.openUploadWidget( {
       cloud_name: 'flycrow',
@@ -26,8 +31,16 @@ class Upload extends Component {
       tags: [ 'TBM' ], //this.props.tag, //.push('TBM'),
       sources: ['local', 'url']
     },
-      function(error, result) {
+      function(result) {
+        if (result) {
+          alert('Routing');
           console.log("This is the result of the last upload", result);
+          alert('Routing');
+          this.props.history.push(`/success`);
+        }
+      },
+      catch(error) {
+        console.log('Error: ', error);
       });
   }
 

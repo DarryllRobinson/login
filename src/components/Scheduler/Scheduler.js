@@ -5,6 +5,7 @@ import {Industry} from './Industry';
 import { Category } from './Category';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
+import history from '../../history';
 
 import './react-datepicker.css';
 import './Scheduler.css';
@@ -16,7 +17,7 @@ class Scheduler extends Component {
     this.state = {
       auto: false,
       name: '',
-      number: 0,
+      flightings: 0,
       startDate: moment(),
       endDate: moment(),
       industry: '',
@@ -35,11 +36,13 @@ class Scheduler extends Component {
 
   handleChange(e) {
     this.setState({[e.target.name]: e.target.value});
+    console.log('e.target.name: ', e.target.name);
+    console.log('e.target.value: ', e.target.value);
     console.log('logging: ',
     [
       this.state.auto.toString(),
       this.state.name.toString(),
-      this.state.number.toString(),
+      this.state.flightings.toString(),
       this.state.startDate.format(),
       this.state.endDate.format(),
       this.state.industry.toString(),
@@ -60,7 +63,7 @@ class Scheduler extends Component {
     let myTags = [
       this.state.auto.toString(),
       this.state.name.toString(),
-      this.state.number.toString(),
+      this.state.flightings.toString(),
       this.state.startDate.format(),
       this.state.endDate.format(),
       this.state.industry.toString(),
@@ -75,37 +78,55 @@ class Scheduler extends Component {
       sources: ['local', 'url']
     },
       function(error, result) {
-          console.log("This is the result of the last upload", result);
+        if (result) {
+          //console.log("This is the result of the last upload", result);
+          history.push(`/success`);
+        } else {
+          history.push('/fail');
+        }
       });
   }
 
   render() {
+    const { isAuthenticated } = this.props.auth;
 
     return (
       <div>
+      {
+        isAuthenticated() && (
+          <div>
         <h3 className="text-center">Scheduler</h3>
         <hr/>
         <div className="campaign" onChange={this.handleChange}>
           <table>
+          <thead>
             <tr>
-              <td colspan="2">
+              <td colSpan="2">
                 <h3>Campaign Details</h3>
               </td>
             </tr>
+            </thead>
+            <tbody>
 
             <tr>
-              <td colspan="2">
+              <td colSpan="2">
                 <input type="text" name="name" id="name" placeholder="Campaign Name" />
               </td>
             </tr>
 
             <tr>
               <td>
-                Auto Schedule <input type="checkbox" name="auto" />
+                Auto Schedule
+                <input type="checkbox"
+                name="auto" />
               </td>
 
-              <td>
-                Number of flightings <input type="number" placeholder="0" />
+              <td width="25px" >
+                Number of flightings
+                <input type="number"
+                  name="flightings"
+                  placeholder="0"
+                  onChange={this.handleChange}/>
               </td>
             </tr>
 
@@ -164,13 +185,15 @@ class Scheduler extends Component {
                 />
               </td>
             </tr>
+            </tbody>
         </table>
 
              <div className="jumbotron text-center">{/*<input placeholder="Content Tag" onChange={this.handleTagChange}></input>*/}
                <button onClick={this.uploadWidget} className="btn btn-lg btn-info">Upload Content</button>
              </div>
         </div>
-
+        </div>
+      )}
       </div>
     );
   }
