@@ -18,10 +18,18 @@
   border: 2px solid grey;
 }
 
-.container {
+#campaign.container {
   border: 2px solid grey;
   padding-top: 15px;
-  max-width: 600px;
+}
+
+.col-xs {
+  background-color: grey;
+  border: 1px solid black;
+  font-size: small;
+  text-align: center;
+  padding: 1.7px;
+  margin: 1px;
 }
 
 h3 {
@@ -41,5 +49,4 @@ td {
 
 #flight {
   width: 50px;
-  height: 22px;
 }

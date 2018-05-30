@@ -22,7 +22,6 @@ class Menu extends Component {
 
     return (
       <div>
-      {console.log('isAuthenticated: ', isAuthenticated())}
       {
         isAuthenticated() && (
           <nav className="navbar navbar-expand-lg navbar-light bg-light">

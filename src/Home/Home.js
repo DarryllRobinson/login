@@ -19,7 +19,7 @@ class Home extends Component {
               <h5>
                 Please{' '}
                 <a
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: 'pointer', color: 'blue' }}
                   onClick={this.login.bind(this)}
                 >
                   sign in
