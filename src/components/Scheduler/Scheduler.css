@@ -12,8 +12,16 @@
   align-items: center;
   text-align: center;
   min-height: 60vh;
-  margin: auto;;
-  /*border: 2px solid grey;*/
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 10px;
+  border: 2px solid grey;
+}
+
+.container {
+  border: 2px solid grey;
+  padding-top: 15px;
+  max-width: 600px;
 }
 
 h3 {
@@ -29,4 +37,9 @@ td {
   /*border: 1px solid red;*/
   text-align: left;
   padding: 10px;
+}
+
+#flight {
+  width: 50px;
+  height: 22px;
 }
