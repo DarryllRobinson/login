@@ -23,13 +23,17 @@
   padding-top: 15px;
 }
 
-.col-xs {
-  background-color: grey;
+#campaign.col-xs-2 {
+  /*background-color: grey;*/
   border: 1px solid black;
   font-size: small;
   text-align: center;
   padding: 1.7px;
   margin: 1px;
+}
+
+#campaign.col-xs-2:hover {
+  cursor: pointer;
 }
 
 h3 {

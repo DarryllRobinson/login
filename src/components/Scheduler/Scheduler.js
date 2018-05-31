@@ -21,21 +21,44 @@ class Scheduler extends Component {
       startDate: moment(),
       endDate: moment(),
       industry: '',
-      category: ''
+      category: '',
+      one: false,
+      two: false,
+      three: false,
+      four: false,
+      five: false,
+      six: false,
+      seven: false,
+      eight: false,
+      nine: false,
+      ten: false,
+      eleven: false,
+      twelve: false,
+      thirteen: false,
+      fourteen: false,
+      fifteen: false,
+      sixteen: false,
+      seventeen: false,
+      eighteen: false,
+      nineteen: false,
+      twenty: false,
+      twentyone: false,
+      twentytwo: false,
+      twentythree: false,
+      twentyfour: false
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeStart = this.handleChangeStart.bind(this);
     this.handleChangeEnd = this.handleChangeEnd.bind(this);
     this.uploadWidget = this.uploadWidget.bind(this);
-  }
-
-  handleClick() {
-
+    this.handleToggle = this.handleToggle.bind(this);
+    this.myColour = this.myColour.bind(this);
+    this.handleAuto = this.handleAuto.bind(this);
   }
 
   handleChange(e) {
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value} );
     console.log('e.target.name: ', e.target.name);
     console.log('e.target.value: ', e.target.value);
     console.log('logging: ',
@@ -51,6 +74,11 @@ class Scheduler extends Component {
     ]);
   }
 
+  handleAuto(e) {
+    const currentState = this.state.auto;
+    //this.setState({ this.state.auto: !currentState });
+  }
+
   handleChangeStart(date) {
     this.setState({ startDate: date })
   }
@@ -59,8 +87,20 @@ class Scheduler extends Component {
     this.setState({ endDate: date })
   }
 
+  handleToggle(e) {
+    const currentState = this.state[e.target.getAttribute("name")];
+    this.setState({ [e.target.getAttribute("name")]: !currentState });
+  }
+
+myColour(hour) {
+  if (this.state[hour] === false) {
+    return "";
+  }
+  return "grey";
+}
+
   uploadWidget = () => {
-    let myTags = [
+    /*let myTags = [
       this.state.auto.toString(),
       this.state.name.toString(),
       this.state.flightings.toString(),
@@ -69,7 +109,9 @@ class Scheduler extends Component {
       this.state.industry.toString(),
       this.state.category.toString(),
       'TBM'
-    ];
+    ];*/
+
+    let myTags = JSON.stringify(this.state);
 
     window.cloudinary.openUploadWidget( {
       cloud_name: 'flycrow',
@@ -97,7 +139,7 @@ class Scheduler extends Component {
           <div>
         <h3 className="text-center">Scheduler</h3>
         <hr/>
-
+{console.log('state: ', JSON.stringify(this.state))}
         <div className="container justify-content-xs-center"
           id="campaign"
           onChange={this.handleChange}>
@@ -110,7 +152,8 @@ class Scheduler extends Component {
           </div>
 
           <div className="row justify-content-xs-center pt-2 pl-1">
-            <div className="col col-xs-4 col-md-3 pt-1">
+            <div className="col col-xs-4 col-md-3 pt-1"
+            onChange={this.handleToggle}>
               Auto Schedule
             </div>
 
@@ -186,79 +229,179 @@ class Scheduler extends Component {
           </div>
 
           <div className="row justify-content-xs-center pt-2 pl-1">
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="one"
+              style={{ background: this.myColour("one") }}
+              onClick={this.handleToggle}>
               00:00 - 01:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="two"
+              style={{ background: this.myColour("two") }}
+              onClick={this.handleToggle}>
               01:00 - 02:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="three"
+              style={{ background: this.myColour("three") }}
+              onClick={this.handleToggle}>
               02:00 - 03:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="four"
+              style={{ background: this.myColour("four") }}
+              onClick={this.handleToggle}>
               03:00 - 04:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="five"
+              style={{ background: this.myColour("five") }}
+              onClick={this.handleToggle}>
               04:00 - 05:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="six"
+              style={{ background: this.myColour("six") }}
+              onClick={this.handleToggle}>
               05:00 - 06:00
             </div>
-            <div className="col col-xs">
+          </div>
+          <div className="row justify-content-xs-center pt-2 pl-1">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="seven"
+              style={{ background: this.myColour("seven") }}
+              onClick={this.handleToggle}>
               06:00 - 07:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="eight"
+              style={{ background: this.myColour("eight") }}
+              onClick={this.handleToggle}>
               07:00 - 08:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="nine"
+              style={{ background: this.myColour("nine") }}
+              onClick={this.handleToggle}>
               08:00 - 09:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="ten"
+              style={{ background: this.myColour("ten") }}
+              onClick={this.handleToggle}>
               09:00 - 10:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="eleven"
+              style={{ background: this.myColour("eleven") }}
+              onClick={this.handleToggle}>
               10:00 - 11:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="twelve"
+              style={{ background: this.myColour("twelve") }}
+              onClick={this.handleToggle}>
               11:00 - 12:00
             </div>
           </div>
 
           <div className="row justify-content-xs-center pt-2 pl-1">
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="thirteen"
+              style={{ background: this.myColour("thirteen") }}
+              onClick={this.handleToggle}>
               12:00 - 13:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="fourteen"
+              style={{ background: this.myColour("fourteen") }}
+              onClick={this.handleToggle}>
               13:00 - 14:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="fifteen"
+              style={{ background: this.myColour("fifteen") }}
+              onClick={this.handleToggle}>
               14:00 - 15:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="sixteen"
+              style={{ background: this.myColour("sixteen") }}
+              onClick={this.handleToggle}>
               15:00 - 16:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="seventeen"
+              style={{ background: this.myColour("seventeen") }}
+              onClick={this.handleToggle}>
               16:00 - 17:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="eighteen"
+              style={{ background: this.myColour("eighteen") }}
+              onClick={this.handleToggle}>
               17:00 - 18:00
             </div>
-            <div className="col col-xs">
+          </div>
+          <div className="row justify-content-xs-center pt-2 pl-1">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="nineteen"
+              style={{ background: this.myColour("nineteen") }}
+              onClick={this.handleToggle}>
               18:00 - 19:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="twenty"
+              style={{ background: this.myColour("twenty") }}
+              onClick={this.handleToggle}>
               19:00 - 20:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="twentyone"
+              style={{ background: this.myColour("twentyone") }}
+              onClick={this.handleToggle}>
               20:00 - 21:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="twentytwo"
+              style={{ background: this.myColour("twentytwo") }}
+              onClick={this.handleToggle}>
               21:00 - 22:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="twentythree"
+              style={{ background: this.myColour("twentythree") }}
+              onClick={this.handleToggle}>
               22:00 - 23:00
             </div>
-            <div className="col col-xs">
+            <div className="col col-xs-2"
+              id="campaign"
+              name="twentyfour"
+              style={{ background: this.myColour("twentyfour") }}
+              onClick={this.handleToggle}>
               23:00 - 00:00
             </div>
           </div>
