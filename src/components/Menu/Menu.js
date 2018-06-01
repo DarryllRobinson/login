@@ -42,7 +42,7 @@ class Menu extends Component {
                   <a  className="nav-link" href="screen">Screen <span  className="sr-only"></span></a>
                 </li>
                 <li  className="nav-item active">
-                  <a  className="nav-link" onClick={this.logout.bind(this)}>Log Out <span  className="sr-only"></span></a>
+                  <a  className="nav-link" style={{ cursor: "pointer" }} onClick={this.logout.bind(this)}>Log Out <span  className="sr-only"></span></a>
                 </li>
               </ul>
             </div>
