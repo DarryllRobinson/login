@@ -25,7 +25,12 @@ class Menu extends Component {
       {
         isAuthenticated() && (
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="home">Flying Crow Media CMS</a>
+            <a className="navbar-brand"
+              onClick={this.goTo.bind(this, 'home')}
+              style={{ cursor: "pointer" }}
+            >
+              Flying Crow Media CMS
+            </a>
             <button  className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span  className="navbar-toggler-icon"></span>
             </button>
@@ -33,16 +38,34 @@ class Menu extends Component {
             <div  className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul  className="navbar-nav mr-auto">
                 <li  className="nav-item active">
-                  <a  className="nav-link" href="home">Home <span  className="sr-only"></span></a>
+                  <a  className="nav-link"
+                    onClick={this.goTo.bind(this, 'scheduler')}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Schedule
+                  <span  className="sr-only">
+                  </span>
+                  </a>
                 </li>
                 <li  className="nav-item active">
-                  <a  className="nav-link" href="scheduler">Schedule <span  className="sr-only"></span></a>
+                  <a  className="nav-link"
+                    onClick={this.goTo.bind(this, 'screen')}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Screen
+                  <span  className="sr-only">
+                  </span>
+                  </a>
                 </li>
                 <li  className="nav-item active">
-                  <a  className="nav-link" href="screen">Screen <span  className="sr-only"></span></a>
-                </li>
-                <li  className="nav-item active">
-                  <a  className="nav-link" style={{ cursor: "pointer" }} onClick={this.logout.bind(this)}>Log Out <span  className="sr-only"></span></a>
+                  <a  className="nav-link"
+                    onClick={this.logout.bind(this)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Log Out
+                  <span  className="sr-only">
+                  </span>
+                  </a>
                 </li>
               </ul>
             </div>

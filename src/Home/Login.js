@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Auth from '../Auth/Auth';
-import { AUTH_CONFIG } from './auth0-variables';
+import auth0 from 'auth0-js';
+import { AUTH_CONFIG } from '../Auth/auth0-variables';
 const databaseConnection = 'Username-Password-Authentication';
 
 class Login extends Component {
@@ -9,8 +10,6 @@ class Login extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  const WebAuth = auth0.WebAuth;
 
   login(e) {
     alert('login(e): ', e);

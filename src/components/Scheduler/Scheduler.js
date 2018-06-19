@@ -75,7 +75,7 @@ class Scheduler extends Component {
   }
 
   handleAuto(e) {
-    const currentState = this.state.auto;
+    //const currentState = this.state.auto;
     //this.setState({ this.state.auto: !currentState });
   }
 

@@ -8,6 +8,7 @@ import Fail from './components/Fail/Fail';
 import Screen from './components/Screen/Screen';
 import App from './App';
 import Home from './Home/Home';
+//import Login from './Home/Login';
 import Signup from './components/Signup/Signup';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
@@ -31,6 +32,7 @@ export const makeMainRoutes = () => {
           <Route path="/application" render={(props) => <Application auth={auth} {...props} />} />
           <Route path="/success" render={(props) => <Success auth={auth} {...props} />} />
           {/*<Route path="/navtest" render={(props) => <Navtest auth={auth} {...props} />} />*/}
+          {/*<Route path="/login" render={(props) => <Login auth={auth} {...props} />} />*/}
           <Route path="/fail" render={(props) => <Fail auth={auth} {...props} />} />
           <Route path="/screen" render={(props) => <Screen auth={auth} {...props} />} />
           <Route path="/signup" render={(props) => <Signup auth={auth} {...props} />} />
